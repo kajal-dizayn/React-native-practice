@@ -1,0 +1,37 @@
+import * as React from "react";
+import { SafeAreaView, StyleSheet } from "react-native";
+import { SegmentedButtons } from "react-native-paper";
+
+const SegmentBtn = () => {
+  const [value, setValue] = React.useState("");
+  console.log(value);
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <SegmentedButtons
+        value={value}
+        onValueChange={setValue}
+        buttons={[
+          {
+            value: "walk",
+            label: "Walking",
+          },
+          {
+            value: "train",
+            label: "Transit",
+          },
+          { value: "drive", label: "Driving" },
+        ]}
+      />
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: "center",
+  },
+});
+
+export default SegmentBtn;
